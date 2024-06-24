@@ -10,8 +10,8 @@ public class Target : MonoBehaviour
     private float maxTorque = 10;
     private float xRange = 4;
     private float ySpawnPos = -6;
-    private GameManager gameManager; 
-
+    private GameManager gameManager;
+    public int pointValue;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class Target : MonoBehaviour
     private void OnMouseDown() 
     {
         Destroy(gameObject);
-        gameManager.UpdateScore(5);
+        gameManager.UpdateScore(pointValue);
     }
     private void OnTriggerEnter(Collider other) { Destroy(other.gameObject); }
 }
