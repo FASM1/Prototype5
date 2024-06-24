@@ -11,6 +11,7 @@ public class Target : MonoBehaviour
     private float xRange = 4;
     private float ySpawnPos = -6;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,4 +37,9 @@ public class Target : MonoBehaviour
     {
         
     }
+    private void OnMouseDown() 
+    {
+        Destroy(gameObject);
+    }
+    private void OnTriggerEnter(Collider other) { Destroy(other.gameObject); }
 }
